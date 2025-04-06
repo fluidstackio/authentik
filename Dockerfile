@@ -128,6 +128,7 @@ RUN --mount=type=bind,target=./pyproject.toml,src=./pyproject.toml \
         libltdl-dev \
         # Required for kadmin
         sccache clang && \
+        rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/ && \
     curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     . "$HOME/.cargo/env" && \
     python -m venv /ak-root/venv/ && \
